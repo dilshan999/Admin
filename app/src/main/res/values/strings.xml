@@ -1,0 +1,58 @@
+<resources>
+    <string name="app_name">Rent A Car</string>
+
+    <string-array name="Vehicle_size">
+        <item>Select Vehicle Size</item>
+        <item>Mini</item>
+        <item>Economy</item>
+        <item>Compact</item>
+        <item>Minivan</item>
+    </string-array>
+
+    <string-array name="Passengers">
+        <item>Select number of passengers</item>
+        <item>4</item>
+        <item>5</item>
+        <item>7</item>
+    </string-array>
+
+    <string-array name="Bags">
+        <item>Select number of Bags</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+    <string-array name="Transmission">
+        <item>Select Transmission</item>
+        <item>Automatic</item>
+        <item>Manual</item>
+    </string-array>
+
+    <string-array name="Fuel">
+        <item>Select Fuel Policy</item>
+        <item>Full to Full</item>
+    </string-array>
+
+    <string-array name="Vehicles">
+        <item>Mini - Hyundai Eon </item>
+        <item>Compact - Toyota Axio</item>
+        <item>Minivan - Hyundai H1</item>
+    </string-array>
+
+    <string-array name="description">
+        <item>Hyundai Eon 4 Passengers 2 Bags Manual Full to Full</item>
+        <item>Toyota Axio 5 Passengers 3 Bags Automatic Full to Full</item>
+        <item>Hyundai H1 7 Passengers 4 Bags Manual Full to Full</item>
+    </string-array>
+
+    <string name="title_activity_admin_home">AdminHomeActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+</resources>
