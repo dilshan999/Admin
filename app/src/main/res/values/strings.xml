@@ -1,6 +1,38 @@
 <resources>
     <string name="app_name">Rent A Car</string>
 
+    <string name="price">Price :</string>
+    <string name="compact">Compact</string>
+    <string name="car">car</string>
+    <string name="pick_the_date">Pick The Date</string>
+    <string name="number_of_days">Enter The Number Of Days</string>
+    <string name="continue_">Continue</string>
+    <string name="mini">Mini</string>
+    <string name="select">Select</string>
+    <string name="enter_your_contact_number">Enter Your Contact Number</string>
+    <string name="enter_your_email">Enter Your Email</string>
+    <string name="enter_your_name">Enter Your Name</string>
+    <string name="automatic">Automatic</string>
+    <string name="seats">Seats</string>
+    <string name="bags">Bags</string>
+    <string name="model">Model</string>
+    <string name="category">Category</string>
+    <string name="price_for_a_day">Price For A Day</string>
+
+    <string name="card1">Name on card</string>
+    <string name="card01">Ex:-John</string>
+    <string name="card2">Card Number</string>
+    <string name="card02">XXXX XXXX XXXX XXXX</string>
+    <string name="card3">Card Expiry Date</string>
+    <string name="card4">Month</string>
+    <string name="card5">Year</string>
+    <string name="card6">CVC</string>
+    <string name="btn01">Cancel</string>
+    <string name="btn02">Pay</string>
+    <string name="msg01">Thank you for choosing our services!</string>
+    <string name="btn03">Home</string>
+
+
     <string-array name="Vehicle_size">
         <item>Select Vehicle Size</item>
         <item>Mini</item>
@@ -55,4 +87,23 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+
+    <string name="Question">Question</string>
+    <string name="Answer">Answer</string>
+    <string name="add">add</string>
+    <string name="answer_1">Answer 1</string>
+    <string name="question_2">Question 2</string>
+    <string name="question_1">Question 1</string>
+    <string name="answer_2">Answer 2</string>
+    <string name="question_3">Question 3</string>
+    <string name="answer_3">Answer 3</string>
+    <string name="title_activity_edit_faq">EditFaqActivity</string>
+    <string name="edit">Edit</string>
+    <string name="delete2">Delete</string>
+    <string name="queastion_1">Question 1</string>
+    <string name="queastion_2">Question 2</string>
+    <string name="delete1">Delete</string>
+    <string name="editButton">Edit</string>
+    <string name="delete">Delete</string>
 </resources>

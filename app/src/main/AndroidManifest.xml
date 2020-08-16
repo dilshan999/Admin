@@ -9,24 +9,45 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".EditActivity"
-            android:windowSoftInputMode="stateHidden"></activity>
-        <activity android:name=".AddVehicleActivity"
-            android:windowSoftInputMode="stateHidden"/>
-        <activity android:name=".LoginActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".SignupActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".SplashActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
-            <activity android:name=".AdminHomeActivity"
-                android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity
+            android:name=".EditFaqActivity"
+            android:label="@string/title_activity_edit_faq"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".FaqActivity">
+        </activity>>
+        <activity android:name=".CreateFaqActivity" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
         </activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".WelcomeActivity" />
+        <activity android:name=".VehicleActivity" />
+        <activity android:name=".PaymentActivity" />
+        <activity android:name=".BookingActivity">
+
+        </activity>
+        <activity android:name=".HomePageActivity" />
+        <activity
+            android:name=".EditActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".AddVehicleActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SignupActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SplashActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AdminHomeActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>
