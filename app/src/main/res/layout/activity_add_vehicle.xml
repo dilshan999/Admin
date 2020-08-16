@@ -45,7 +45,7 @@
             android:layout_marginTop="32dp"
             android:layout_marginLeft="32dp"
             android:layout_marginRight="32dp"
-            android:text="Vehicle Size :"
+            android:text="@string/vehicle_size"
             android:textColor="#000000"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -67,7 +67,7 @@
             android:layout_marginTop="32dp"
             android:layout_marginLeft="32dp"
             android:layout_marginRight="32dp"
-            android:text="Price :"
+            android:text="@string/price"
             android:textColor="#000000"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -92,7 +92,7 @@
             android:layout_marginTop="32dp"
             android:layout_marginLeft="32dp"
             android:layout_marginRight="32dp"
-            android:text="Brand :"
+            android:text="@string/brand"
             android:textColor="#000000"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -116,7 +116,7 @@
             android:layout_marginTop="32dp"
             android:layout_marginLeft="32dp"
             android:layout_marginRight="32dp"
-            android:text="Passengers :"
+            android:text="@string/passengers"
             android:textColor="#000000"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -135,10 +135,10 @@
             android:id="@+id/textView4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
             android:layout_marginLeft="32dp"
+            android:layout_marginTop="32dp"
             android:layout_marginRight="32dp"
-            android:text="Bags :"
+            android:text="@string/bags"
             android:textColor="#000000"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -160,7 +160,7 @@
             android:layout_marginTop="32dp"
             android:layout_marginLeft="32dp"
             android:layout_marginRight="32dp"
-            android:text="Transmission :"
+            android:text="@string/transmission"
             android:textColor="#000000"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -182,7 +182,7 @@
             android:layout_marginTop="32dp"
             android:layout_marginLeft="32dp"
             android:layout_marginRight="32dp"
-            android:text="Fuel :"
+            android:text="@string/fuel"
             android:textColor="#000000"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -204,7 +204,7 @@
             android:layout_marginTop="32dp"
             android:layout_marginLeft="32dp"
             android:layout_marginRight="32dp"
-            android:text="Description :"
+            android:text="@string/description"
             android:textColor="#000000"
             android:textSize="18sp"
             android:textStyle="bold" />

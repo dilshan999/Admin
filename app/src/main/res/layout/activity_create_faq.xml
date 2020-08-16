@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    tools:ignore="ExtraText"
+    android:orientation = "vertical"
+    android:gravity ="center_horizontal">
+
+
+    <TextView
+        android:id="@+id/que1"
+        android:layout_width="100dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginRight="125dp"
+        android:text="@string/Question"
+        android:textAllCaps="true"
+        android:textColor="#090707"
+        android:textSize="18sp"
+        android:layout_marginEnd="125dp" />
+
+    <EditText
+
+        android:layout_width="314dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:shadowColor="#010400"
+        android:autofillHints=""
+        android:hint ="@string/Question"
+        android:inputType="text"
+        android:layout_marginEnd="20dp" />
+
+
+    <TextView
+        android:id="@+id/ans1"
+        android:layout_width="87dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="130dp"
+        android:text="@string/Answer"
+
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:layout_marginEnd="130dp" />
+
+    <EditText
+
+        android:layout_width="317dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="23dp"
+        android:hint ="@string/Answer"
+        android:autofillHints=""
+        android:layout_marginEnd="23dp"
+        android:inputType="text" />
+
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="131dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="40dp"
+        android:background="#1057cd"
+        android:text="@string/add"
+        android:textColor="#F8EEEE" />
+
+
+</LinearLayout>

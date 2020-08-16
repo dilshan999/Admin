@@ -13,41 +13,49 @@
             android:name=".EditFaqActivity"
             android:label="@string/title_activity_edit_faq"
             android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".FaqActivity">
-        </activity>>
-        <activity android:name=".CreateFaqActivity" >
+        <activity android:name=".FaqActivity"
+            android:label="Faq">
+        </activity>
+        <activity android:name=".CreateFaqActivity"
+            android:label="Create Faq">
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
 
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
-        <activity android:name=".WelcomeActivity" />
-        <activity android:name=".VehicleActivity" />
-        <activity android:name=".PaymentActivity" />
-        <activity android:name=".BookingActivity">
+        <activity android:name=".MainActivity"/>
+        <activity android:name=".WelcomeActivity"
+            android:label="Welcome"/>
+        <activity android:name=".VehicleActivity"
+            android:label="Car"/>
+        <activity android:name=".PaymentActivity"
+            android:label="Payment"/>
+        <activity android:name=".BookingActivity"
+            android:label="Book Vehicle">
 
         </activity>
         <activity android:name=".HomePageActivity" />
         <activity
             android:name=".EditActivity"
-            android:windowSoftInputMode="stateHidden" />
+            android:windowSoftInputMode="stateHidden"
+            android:label="Edit"/>
         <activity
             android:name=".AddVehicleActivity"
-            android:windowSoftInputMode="stateHidden" />
+            android:windowSoftInputMode="stateHidden"
+            android:label="Add Vehicle"/>
         <activity
             android:name=".LoginActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".SignupActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".SplashActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".AdminHomeActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>
