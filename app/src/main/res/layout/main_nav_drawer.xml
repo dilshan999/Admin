@@ -36,7 +36,7 @@
             android:layout_marginStart="32dp"
             android:layout_weight="1"
             android:padding="12dp"
-            android:text="Home"
+            android:text="@string/drawer_Home_btn"
             android:textStyle="bold"
             android:textColor="@color/colorAccent"
             android:textSize="18sp" />
@@ -64,7 +64,7 @@
             android:layout_marginStart="32dp"
             android:layout_weight="1"
             android:padding="12dp"
-            android:text="Add New Vehicle"
+            android:text="@string/drawer_add_new_vehicle_btn"
             android:textStyle="bold"
             android:textColor="@color/colorAccent"
             android:textSize="18sp" />
@@ -92,7 +92,7 @@
             android:layout_marginStart="32dp"
             android:layout_weight="1"
             android:padding="12dp"
-            android:text="Sign out"
+            android:text="@string/sign_out_btn"
             android:textStyle="bold"
             android:textColor="@color/colorAccent"
             android:textSize="18sp" />
