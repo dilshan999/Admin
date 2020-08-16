@@ -12,12 +12,21 @@
         <activity
             android:name=".EditFaqActivity"
             android:label="@string/title_activity_edit_faq"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".FaqActivity"
             android:label="Faq">
         </activity>
         <activity android:name=".CreateFaqActivity"
-            android:label="Create Faq">
+            android:label="Create Faq"/>
+
+        <activity
+            android:name=".EditActivity"
+            android:windowSoftInputMode="stateHidden"
+            android:label="Edit"/>
+
+        <activity
+            android:name=".AdminHomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
 
@@ -36,10 +45,7 @@
 
         </activity>
         <activity android:name=".HomePageActivity" />
-        <activity
-            android:name=".EditActivity"
-            android:windowSoftInputMode="stateHidden"
-            android:label="Edit"/>
+
         <activity
             android:name=".AddVehicleActivity"
             android:windowSoftInputMode="stateHidden"
@@ -53,9 +59,7 @@
         <activity
             android:name=".SplashActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
-        <activity
-            android:name=".AdminHomeActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+
     </application>
 
 </manifest>
