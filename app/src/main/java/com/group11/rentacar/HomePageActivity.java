@@ -31,6 +31,7 @@ public class HomePageActivity extends AppCompatActivity {
     private ArrayList<Car> list;
     private RecyclerView recyclerView2;
     private HomePageAdapter homePageAdapter;
+    private HomePageAdapter.OnItemClickListener listener;
 
     private Context mContext;
     public ImageView updimage;
@@ -48,6 +49,8 @@ public class HomePageActivity extends AppCompatActivity {
         recyclerView2.setLayoutManager(new LinearLayoutManager(this));
         list = new ArrayList<Car>();
 
+        setOnClickListener();
+
 
         reference = FirebaseDatabase.getInstance().getReference().child("Vehicles");
         reference.addValueEventListener(new ValueEventListener() {
@@ -57,7 +60,7 @@ public class HomePageActivity extends AppCompatActivity {
                     Car ca = dataSnapshot1.getValue(Car.class);
                     list.add(ca);
                 }
-                homePageAdapter = new HomePageAdapter(HomePageActivity.this, list);
+                homePageAdapter = new HomePageAdapter(HomePageActivity.this, list,listener);
                 recyclerView2.setAdapter(homePageAdapter);
             }
 
@@ -69,9 +72,7 @@ public class HomePageActivity extends AppCompatActivity {
 
 
         /*string1 = getResources().getStringArray(R.array.Vehicles);
-
         recyclerView2 = findViewById(R.id.recyclerview);
-
         HomePageAdapter homePageAdapter = new HomePageAdapter(this, string1, images);
         recyclerView2.setAdapter(homePageAdapter);
         recyclerView2.setLayoutManager(new LinearLayoutManager(this));*/
@@ -79,9 +80,7 @@ public class HomePageActivity extends AppCompatActivity {
 
         /*recyclerView2 = (RecyclerView) findViewById(R.id.recyclerview);
         recyclerView2.setLayoutManager(new LinearLayoutManager(this));
-
         list = new ArrayList<Car>();
-
         reference = FirebaseDatabase.getInstance().getReference().child("Vehicles");
         reference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -94,7 +93,6 @@ public class HomePageActivity extends AppCompatActivity {
                 homePageAdapter = new HomePageAdapter(HomePageActivity.this,list);
                 recyclerView2.setAdapter(homePageAdapter);
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
                 Toast.makeText(HomePageActivity.this, "Something went wrong", Toast.LENGTH_SHORT).show();
@@ -103,5 +101,16 @@ public class HomePageActivity extends AppCompatActivity {
 */
 
 
+    }
+
+    private void setOnClickListener() {
+        listener = new HomePageAdapter.OnItemClickListener() {
+            @Override
+            public void onClick(View v, int position) {
+                Intent intent = new Intent(getApplicationContext(),BookingActivity.class);
+                intent.putExtra("name",list.get(position).getName());
+                startActivity(intent);
+            }
+        };
     }
 }

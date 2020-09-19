@@ -1,9 +1,12 @@
 package com.group11.rentacar;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -15,23 +18,24 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class HomePageAdapter extends RecyclerView.Adapter<HomePageAdapter.ViewHolder> {
+public class HomePageAdapter extends RecyclerView.Adapter<HomePageAdapter.ViewHolder>{
 
-    public OnItemClickListener listener;
 
     /*String st1[];
     int images[];
     Context context;*/
 
+    public OnItemClickListener listener;
     private Context context;
     private ArrayList<Car> cars;
 
-    public HomePageAdapter(/*Context ct, String s1[], int imgs[]*/Context c, ArrayList<Car> ca) {
+    public HomePageAdapter(/*Context ct, String s1[], int imgs[]*/Context c, ArrayList<Car> ca,OnItemClickListener listener) {
         /*st1 = s1;
         context = ct;
         images = imgs;*/
         context = c;
         cars = ca;
+        this.listener = listener;
 
     }
 
@@ -61,40 +65,36 @@ public class HomePageAdapter extends RecyclerView.Adapter<HomePageAdapter.ViewHo
         return cars.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         /*TextView txt1;
         ImageView imgView;
-
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             txt1 = itemView.findViewById(R.id.vehicle_name);
             imgView = itemView.findViewById(R.id.vehicle_img);*/
 
-         TextView txt1;
+        TextView txt1;
         ImageView imgView;
+        Button btn;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             txt1 = itemView.findViewById(R.id.vehicle_name);
             imgView = itemView.findViewById(R.id.vehicle_img);
+            btn = itemView.findViewById(R.id.btnSelect);
 
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    int position = getAdapterPosition();
-                    if(position != RecyclerView.NO_POSITION && listener != null){
+            itemView.setOnClickListener(this);
+        }
 
-                    }
-                }
-            });
+        @Override
+        public void onClick(View v) {
+            listener.onClick(itemView,getAdapterPosition());
         }
     }
     public interface OnItemClickListener{
-        void onItemClick(DataSnapshot dataSnapshot,int position);
+        void onClick(View v ,int position);
     }
 
-    public void setOnItemClickListener(OnItemClickListener listener){
-        this.listener=listener;
-    }
+
 }
