@@ -1,22 +1,21 @@
 <resources>
     <string name="app_name">Rent A Car</string>
 
-
-    <string name="compact">Compact</string>
     <string name="car">car</string>
     <string name="pick_the_date">Pick The Date</string>
     <string name="number_of_days">Enter The Number Of Days</string>
     <string name="continue_">Continue</string>
-    <string name="mini">Mini</string>
     <string name="select">Select</string>
     <string name="enter_your_contact_number">Enter Your Contact Number</string>
     <string name="enter_your_email">Enter Your Email</string>
     <string name="enter_your_name">Enter Your Name</string>
-    <string name="automatic">Automatic</string>
     <string name="seats">Seats</string>
     <string name="model">Model</string>
     <string name="category">Category</string>
     <string name="price_for_a_day">Price For A Day</string>
+    <string name="compact">Compact</string>
+    <string name="mini">Mini</string>
+    <string name="automatic">Automatic</string>
 
     <string name="card1">Name on card</string>
     <string name="card01">Ex:-John</string>
@@ -99,8 +98,6 @@
     <string name="previous">Previous</string>
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-
-
     <string name="Question">Question</string>
     <string name="Answer">Answer</string>
     <string name="add">add</string>
@@ -118,7 +115,6 @@
     <string name="delete1">Delete</string>
     <string name="editButton">Edit</string>
     <string name="delete">Delete</string>
-
 
 
 </resources>
