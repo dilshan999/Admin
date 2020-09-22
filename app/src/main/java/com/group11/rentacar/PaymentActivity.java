@@ -54,36 +54,7 @@ public class PaymentActivity extends AppCompatActivity {
 
         });
 
-        btnPay.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                payment();
-            }
-        });
 
-
-
-    }
-
-    private boolean validateName(){
-        String val = editCardName.getText().toString();
-
-        if (val.isEmpty()){
-            editCardName.setError("Field cannot be empty");
-            return false;
-        }
-        else {
-            editCardName.setError(null);
-            return true;
-        }
-
-    }
-
-    public void payment(){
-
-        if (!validateName()){
-            return;
-        }
 
     }
 
