@@ -36,7 +36,7 @@
         android:hint="@string/card01"
         android:inputType="textPersonName"
         android:paddingLeft="15dp"
-        android:textColorHint="@color/ash"
+        android:textColorHint="@android:color/tertiary_text_light"
         app:layout_constraintBottom_toTopOf="@+id/textView3"
         app:layout_constraintStart_toStartOf="@+id/textView3"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -60,7 +60,7 @@
         android:hint="@string/card02"
         android:inputType="number"
         android:paddingLeft="15dp"
-        android:textColorHint="@color/ash"
+        android:textColorHint="@android:color/tertiary_text_light"
         app:layout_constraintBottom_toTopOf="@+id/textView4"
         app:layout_constraintStart_toStartOf="@+id/textView4"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
@@ -85,7 +85,7 @@
         android:hint="YYYY"
         android:inputType="number"
         android:paddingLeft="15dp"
-        android:textColorHint="@color/ash"
+        android:textColorHint="@android:color/tertiary_text_light"
         app:layout_constraintBottom_toBottomOf="@+id/txtmonth"
         app:layout_constraintStart_toEndOf="@+id/txtmonth"
         app:layout_constraintTop_toTopOf="@+id/txtmonth"
@@ -101,7 +101,7 @@
         android:hint="MM"
         android:inputType="number"
         android:paddingLeft="15dp"
-        android:textColorHint="@color/ash"
+        android:textColorHint="@android:color/tertiary_text_light"
         app:layout_constraintBottom_toTopOf="@+id/textView7"
         app:layout_constraintStart_toStartOf="@+id/textView7"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
@@ -125,7 +125,7 @@
         android:hint="@string/card6"
         android:inputType="number"
         android:paddingLeft="15dp"
-        android:textColorHint="@color/ash"
+        android:textColorHint="@android:color/tertiary_text_light"
         app:layout_constraintBottom_toTopOf="@+id/textView8"
         app:layout_constraintStart_toStartOf="@+id/textView8"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
