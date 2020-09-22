@@ -90,36 +90,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.223" />
 
-    <EditText
-        android:id="@+id/editTextDate"
-        android:layout_width="317dp"
-        android:layout_height="50dp"
-        android:autofillHints=""
-        android:backgroundTintMode="multiply"
-        android:ems="10"
-        android:hint="@string/pick_the_date"
-        android:inputType="date|textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.693" />
-
-    <EditText
-        android:id="@+id/editTextNoDays"
-        android:layout_width="318dp"
-        android:layout_height="45dp"
-        android:ems="10"
-        android:hint="@string/number_of_days"
-        android:importantForAutofill="no"
-        android:inputType="textPersonName|text"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.794" />
-
     <Button
         android:id="@+id/btnContinue"
         android:layout_width="317dp"
@@ -156,10 +126,10 @@
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.54"
+        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.385" />
+        app:layout_constraintVertical_bias="0.38" />
 
     <EditText
         android:id="@+id/editTextCustomerPhone"
@@ -173,6 +143,34 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.485" />
+
+    <EditText
+        android:id="@+id/editTextNoDays"
+        android:layout_width="320dp"
+        android:layout_height="47dp"
+        android:ems="10"
+        android:hint="@string/number_of_days"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.794" />
+
+    <EditText
+        android:id="@+id/editTextDate"
+        android:layout_width="319dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:hint="@string/pick_the_date"
+        android:inputType="date"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.685" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

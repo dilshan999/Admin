@@ -54,6 +54,8 @@ public class HomePageAdapter extends RecyclerView.Adapter<HomePageAdapter.ViewHo
         holder.imgView.setImageResource(images[position]);*/
         Car carCurrent = cars.get(position);
         holder.txt1.setText(carCurrent.getName());
+        holder.price.setText(carCurrent.getPrice());
+        holder.transmission.setText(carCurrent.getTransmission());
         Picasso.with(context).load(cars.get(position).getImage()).placeholder(R.mipmap.ic_launcher).into(holder.imgView);
 
 
@@ -75,6 +77,8 @@ public class HomePageAdapter extends RecyclerView.Adapter<HomePageAdapter.ViewHo
             imgView = itemView.findViewById(R.id.vehicle_img);*/
 
         TextView txt1;
+        TextView price;
+        TextView transmission;
         ImageView imgView;
         Button btn;
 
@@ -82,7 +86,8 @@ public class HomePageAdapter extends RecyclerView.Adapter<HomePageAdapter.ViewHo
             super(itemView);
             txt1 = itemView.findViewById(R.id.vehicle_name);
             imgView = itemView.findViewById(R.id.vehicle_img);
-            btn = itemView.findViewById(R.id.btnSelect);
+            price = itemView.findViewById(R.id.vehicle_price);
+            transmission = itemView.findViewById(R.id.vehicle_transmission);
 
             itemView.setOnClickListener(this);
         }
