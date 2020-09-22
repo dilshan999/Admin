@@ -37,7 +37,11 @@
             android:label="Car"></activity>
         <activity
             android:name=".PaymentActivity"
-            android:label="Payment" />
+            android:label="Payment">
+
+
+        </activity>
+
         <activity
             android:name=".BookingActivity"
             android:label="Book Vehicle"></activity>
@@ -48,6 +52,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity
             android:name=".AddVehicleActivity"
