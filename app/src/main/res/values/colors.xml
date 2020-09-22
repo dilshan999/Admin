@@ -7,4 +7,6 @@
     <color name="login_details">#ccffffff</color>
     <color name="login_details_light">#1affffff</color>
     <color name="login_details_medium">#66ffffff</color>
+    <color name="white">#ffff</color>
+    <color name="ash">#66ffffff</color>
 </resources>
