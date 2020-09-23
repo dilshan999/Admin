@@ -46,7 +46,7 @@ public class PaymentActivity extends AppCompatActivity {
         btnPay = findViewById(R.id.btnPay);
         btnCancel = findViewById(R.id.btnCancel);
 
-       // total();
+        total();
 
         awesomeValidation.addValidation(PaymentActivity.this, R.id.txtname, "[a-zA-Z\\s]+", R.string.err_name);
         awesomeValidation.addValidation(PaymentActivity.this, R.id.txtcard, "(?=.*[0-9]).{16,}", R.string.err_card);
@@ -121,12 +121,15 @@ public class PaymentActivity extends AppCompatActivity {
 
     public void total(){
 
-        float tp,nd;
+        String tp,nd;
+        float tot;
 
-        tp=Float.valueOf (getIntent().getExtras().getString("Value1"));
-        nd= Float.valueOf(getIntent().getExtras().getString("Value2"));
+        tp=getIntent().getExtras().getString("Value1");
+        nd= getIntent().getExtras().getString("Value2");
 
-        edittotal.setText(String.valueOf(tp*nd));
+        tot = Float.valueOf(tp)*Float.valueOf(nd);
+
+        edittotal.setText(String.valueOf(tot));
 
     }
 

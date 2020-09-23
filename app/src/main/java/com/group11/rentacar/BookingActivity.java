@@ -65,7 +65,6 @@ public class BookingActivity extends AppCompatActivity {
         final TextView finalTextPrice = textPrice;
 
 
-        final TextView finalTextPrice1 = textPrice;
         btnCon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -80,15 +79,11 @@ public class BookingActivity extends AppCompatActivity {
                 Toast.makeText(BookingActivity.this, "Data added successfully", Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(BookingActivity.this,PaymentActivity.class);
-                tp= finalTextPrice1.getText().toString();
+                tp= finalTextPrice.getText().toString();
                 intent.putExtra("Value1",tp);
-                startActivity(intent);
-                finish();
-
-                Intent i = new Intent(BookingActivity.this,PaymentActivity.class);
                 nd= txtCustomerNoOfDays.getText().toString();
-                i.putExtra("Value2",nd);
-                startActivity(i);
+                intent.putExtra("Value2",nd);
+                startActivity(intent);
                 finish();
             }
         });
