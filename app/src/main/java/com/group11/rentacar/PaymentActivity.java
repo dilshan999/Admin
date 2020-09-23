@@ -63,7 +63,7 @@ public class PaymentActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
 
-                        Intent intent = new Intent(PaymentActivity.this,BookingActivity.class);
+                        Intent intent = new Intent(PaymentActivity.this,HomePageActivity.class);
                         startActivity(intent);
 
                     }
