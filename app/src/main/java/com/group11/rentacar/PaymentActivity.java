@@ -58,7 +58,7 @@ public class PaymentActivity extends AppCompatActivity {
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(PaymentActivity.this);
+                AlertDialog.Builder builder = new AlertDialog.Builder(PaymentActivity.this,R.style.Theme_MaterialComponents_DayNight_Dialog_Alert_Bridge);
                 builder.setMessage("Are you sure?").setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -70,7 +70,10 @@ public class PaymentActivity extends AppCompatActivity {
                 }).setNegativeButton("Cancel",null);
 
                 AlertDialog alert = builder.create();
+
                 alert.show();
+
+
             }
 
         });
@@ -105,7 +108,7 @@ public class PaymentActivity extends AppCompatActivity {
     @Override
     public void onBackPressed(){
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(PaymentActivity.this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(PaymentActivity.this,R.style.Theme_MaterialComponents_DayNight_Dialog_Alert_Bridge);
         builder.setTitle("Really Exit?").setMessage("Are you sure?").setPositiveButton("Ok", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
