@@ -115,6 +115,12 @@
     <string name="delete1">Delete</string>
     <string name="editButton">Edit</string>
     <string name="delete">Delete</string>
+    <string name="err_name">Invalid Name</string>
+    <string name="err_card">Card number invalid</string>
+    <string name="err_month">invalid month</string>
+    <string name="err_year">invalid year</string>
+    <string name="err_cvc">invalid number</string>
+    <string name="msg03">Payment Succesfull!</string>
 
 
 </resources>

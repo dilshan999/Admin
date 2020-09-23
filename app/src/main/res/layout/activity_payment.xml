@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".PaymentActivity">
 
     <ImageView
         android:id="@+id/imageView"
@@ -19,7 +19,7 @@
 
     <EditText
         android:id="@+id/txtname"
-        android:layout_width="280dp"
+        android:layout_width="300dp"
         android:layout_height="45dp"
         android:layout_marginStart="24dp"
         android:background="@drawable/btn"
@@ -28,14 +28,14 @@
         android:hint="@string/card01"
         android:inputType="textPersonName"
         android:paddingLeft="15dp"
-        android:textColorHint="#AAA9A9"
+        android:textColorHint="#BAB9B9"
         app:layout_constraintBottom_toTopOf="@+id/textView3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
         android:id="@+id/txtcard"
-        android:layout_width="280dp"
+        android:layout_width="250dp"
         android:layout_height="45dp"
         android:layout_marginStart="24dp"
         android:background="@drawable/btn"
@@ -44,7 +44,7 @@
         android:hint="@string/card02"
         android:inputType="number"
         android:paddingLeft="15dp"
-        android:textColorHint="#AAA9A9"
+        android:textColorHint="#BAB9B9"
         app:layout_constraintBottom_toTopOf="@+id/textView4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
@@ -72,7 +72,7 @@
 
     <EditText
         android:id="@+id/txtyear"
-        android:layout_width="73dp"
+        android:layout_width="90dp"
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
         android:background="@drawable/btn"
@@ -81,7 +81,7 @@
         android:hint="YYYY"
         android:inputType="number"
         android:paddingLeft="15dp"
-        android:textColorHint="#AAA9A9"
+        android:textColorHint="#BAB9B9"
         app:layout_constraintBottom_toBottomOf="@+id/txtmonth"
         app:layout_constraintStart_toEndOf="@+id/txtmonth"
         app:layout_constraintTop_toTopOf="@+id/txtmonth"
@@ -99,7 +99,7 @@
 
     <EditText
         android:id="@+id/txtcvc"
-        android:layout_width="67dp"
+        android:layout_width="80dp"
         android:layout_height="38dp"
         android:layout_marginStart="24dp"
         android:background="@drawable/btn"
@@ -108,14 +108,14 @@
         android:hint="@string/card6"
         android:inputType="number"
         android:paddingLeft="15dp"
-        android:textColorHint="#AAA9A9"
+        android:textColorHint="#BAB9B9"
         app:layout_constraintBottom_toTopOf="@+id/textView8"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <EditText
         android:id="@+id/txtmonth"
-        android:layout_width="62dp"
+        android:layout_width="80dp"
         android:layout_height="39dp"
         android:layout_marginStart="24dp"
         android:background="@drawable/btn"
@@ -124,7 +124,7 @@
         android:hint="MM"
         android:inputType="number"
         android:paddingLeft="15dp"
-        android:textColorHint="#AAA9A9"
+        android:textColorHint="#BAB9B9"
         app:layout_constraintBottom_toTopOf="@+id/textView7"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
@@ -183,7 +183,6 @@
         android:layout_marginEnd="16dp"
         android:background="@drawable/btn"
         android:backgroundTint="@color/colorPrimary"
-        android:enabled="false"
         android:text="@string/btn02"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="@+id/btnCancel"

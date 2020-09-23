@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.group11.rentacar">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -11,13 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".AfterPaymentActivity"></activity>
         <activity
             android:name=".EditFaqActivity"
             android:label="@string/title_activity_edit_faq"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".FaqActivity"
-            android:label="Faq"></activity>
+            android:label="Faq" />
         <activity
             android:name=".CreateFaqActivity"
             android:label="Create Faq" />
@@ -27,32 +28,26 @@
             android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".AdminHomeActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".MainActivity" />
         <activity
             android:name=".WelcomeActivity"
             android:label="Welcome" />
         <activity
             android:name=".VehicleActivity"
-            android:label="Car"></activity>
+            android:label="Car" />
         <activity
             android:name=".PaymentActivity"
-            android:label="Payment">
-
-
-        </activity>
-
+            android:label="Payment"></activity>
         <activity
             android:name=".BookingActivity"
-            android:label="Book Vehicle"></activity>
+            android:label="Book Vehicle" />
         <activity android:name=".HomePageActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".AddVehicleActivity"

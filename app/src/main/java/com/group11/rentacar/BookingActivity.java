@@ -20,11 +20,12 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class BookingActivity extends AppCompatActivity {
 
-//TextView textModel,textCategory,textPrice;
-EditText txtCustomerName,txtCustomerPhone,txtCustomerEmail,txtCustomerDate,txtCustomerNoOfDays;
-Button btnCon;
-DatabaseReference reff;
-Booking booking;
+    //TextView textModel,textCategory,textPrice;
+    EditText txtCustomerName,txtCustomerPhone,txtCustomerEmail,txtCustomerDate,txtCustomerNoOfDays;
+    Button btnCon;
+    DatabaseReference reff;
+    Booking booking;
+    String tp,nd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +65,7 @@ Booking booking;
         final TextView finalTextPrice = textPrice;
 
 
+        final TextView finalTextPrice1 = textPrice;
         btnCon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -76,6 +78,18 @@ Booking booking;
                 booking.setCusNoOfDays(txtCustomerNoOfDays.getText().toString().trim());
                 reff.push().setValue(booking);
                 Toast.makeText(BookingActivity.this, "Data added successfully", Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(BookingActivity.this,PaymentActivity.class);
+                tp= finalTextPrice1.getText().toString();
+                intent.putExtra("Value1",tp);
+                startActivity(intent);
+                finish();
+
+                Intent i = new Intent(BookingActivity.this,PaymentActivity.class);
+                nd= txtCustomerNoOfDays.getText().toString();
+                i.putExtra("Value2",nd);
+                startActivity(i);
+                finish();
             }
         });
 
