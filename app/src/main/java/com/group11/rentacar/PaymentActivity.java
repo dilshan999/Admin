@@ -14,6 +14,8 @@ import android.widget.Toast;
 
 import com.basgeekball.awesomevalidation.AwesomeValidation;
 import com.google.common.collect.Range;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import static com.basgeekball.awesomevalidation.ValidationStyle.BASIC;
 
@@ -28,6 +30,8 @@ public class PaymentActivity extends AppCompatActivity {
     private Button btnPay;
     private Button btnCancel;
     AwesomeValidation awesomeValidation;
+    DatabaseReference dref;
+    Payment pyt;
 
 
     @Override
@@ -45,6 +49,8 @@ public class PaymentActivity extends AppCompatActivity {
         edittotal = findViewById(R.id.txttotal);
         btnPay = findViewById(R.id.btnPay);
         btnCancel = findViewById(R.id.btnCancel);
+
+        pyt = new Payment();
 
         total();
 
@@ -90,6 +96,20 @@ public class PaymentActivity extends AppCompatActivity {
                     String ee = editCvc.getText().toString();
 
                     Toast.makeText(getApplicationContext(),"Validating Payment",Toast.LENGTH_SHORT).show();
+
+                    dref = FirebaseDatabase.getInstance().getReference().child("Payment");
+
+                    pyt.setName(editCardName.getText().toString().trim());
+                    pyt.setCardNum(editCardNumber.getText().toString().trim());
+                    pyt.setMonth(editMonth.getText().toString().trim());
+                    pyt.setYear(editYear.getText().toString().trim());
+                    pyt.setCvc(editCvc.getText().toString().trim());
+                    pyt.setTotal(edittotal.getText().toString().trim());
+
+                    dref.push().setValue(pyt);
+
+                    Toast.makeText(getApplicationContext(),"Data Successfully Added",Toast.LENGTH_SHORT).show();
+
 
                     Intent intent = new Intent(PaymentActivity.this,AfterPaymentActivity.class);
                     startActivity(intent);
