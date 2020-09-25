@@ -1,5 +1,6 @@
 package com.group11.rentacar;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,8 +15,11 @@ import android.widget.Toast;
 
 import com.basgeekball.awesomevalidation.AwesomeValidation;
 import com.google.common.collect.Range;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import static com.basgeekball.awesomevalidation.ValidationStyle.BASIC;
 
@@ -32,6 +36,8 @@ public class PaymentActivity extends AppCompatActivity {
     AwesomeValidation awesomeValidation;
     DatabaseReference dref;
     Payment pyt;
+    String id;
+    String i1;
 
 
     @Override
@@ -57,7 +63,7 @@ public class PaymentActivity extends AppCompatActivity {
         awesomeValidation.addValidation(PaymentActivity.this, R.id.txtname, "[a-zA-Z\\s]+", R.string.err_name);
         awesomeValidation.addValidation(PaymentActivity.this, R.id.txtcard, "(?=.*[0-9]).{16,}", R.string.err_card);
         awesomeValidation.addValidation(PaymentActivity.this, R.id.txtmonth, Range.closed(01,12), R.string.err_month);
-        awesomeValidation.addValidation(PaymentActivity.this, R.id.txtyear, "[2020-2050]+", R.string.err_year);
+        awesomeValidation.addValidation(PaymentActivity.this, R.id.txtyear, "[?=.*[0-9]).{4,}]+", R.string.err_year);
         awesomeValidation.addValidation(PaymentActivity.this, R.id.txtcvc, "(?=.*[0-9]).{3,}", R.string.err_cvc);
 
 
@@ -88,6 +94,7 @@ public class PaymentActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+
                 if (awesomeValidation.validate()) {
                     String aa = editCardName.getText().toString();
                     String bb = editCardNumber.getText().toString();
@@ -106,12 +113,17 @@ public class PaymentActivity extends AppCompatActivity {
                     pyt.setCvc(editCvc.getText().toString().trim());
                     pyt.setTotal(edittotal.getText().toString().trim());
 
-                    dref.push().setValue(pyt);
+                    id = editCardNumber.getText().toString();
+
+                    dref.child(id).setValue(pyt);
 
                     Toast.makeText(getApplicationContext(),"Data Successfully Added",Toast.LENGTH_SHORT).show();
 
 
                     Intent intent = new Intent(PaymentActivity.this,AfterPaymentActivity.class);
+                    i1= editCardNumber.getText().toString();
+                    intent.putExtra("Value1",i1);
+
                     startActivity(intent);
                 }
                 else {
