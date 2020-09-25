@@ -2,8 +2,11 @@ package com.group11.rentacar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -38,6 +41,7 @@ public class AfterPaymentActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(AfterPaymentActivity.this,HomePageActivity.class);
                 startActivity(intent);
+
             }
         });
 
@@ -47,27 +51,38 @@ public class AfterPaymentActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                    mReference = FirebaseDatabase.getInstance().getReference().child("Payment");
-                    mReference.addListenerForSingleValueEvent(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            if (snapshot.hasChild(i1)){
-                                mReference = FirebaseDatabase.getInstance().getReference("Payment").child(i1);
-                                mReference.removeValue();
+                AlertDialog.Builder builder = new AlertDialog.Builder(AfterPaymentActivity.this,R.style.Theme_MaterialComponents_DayNight_Dialog_Alert_Bridge);
+                builder.setMessage("Are you sure?").setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
 
-                                Toast.makeText(getApplicationContext(),"Order Successfully Deleted",Toast.LENGTH_SHORT).show();
+                        mReference = FirebaseDatabase.getInstance().getReference().child("Payment");
+                        mReference.addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                if (snapshot.hasChild(i1)){
+                                    mReference = FirebaseDatabase.getInstance().getReference("Payment").child(i1);
+                                    mReference.removeValue();
+
+                                    Toast.makeText(getApplicationContext(),"Order Successfully Deleted",Toast.LENGTH_SHORT).show();
+
+                                    Intent intent = new Intent(AfterPaymentActivity.this,HomePageActivity.class);
+                                    startActivity(intent);
+                                }
                             }
-                        }
 
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
 
-                        }
-                    });
+                            }
+                        });
 
+                    }
+                }).setNegativeButton("Cancel",null);
 
-                Intent intent = new Intent(AfterPaymentActivity.this,HomePageActivity.class);
-                startActivity(intent);
+                AlertDialog alert = builder.create();
+
+                alert.show();
 
 
             }
