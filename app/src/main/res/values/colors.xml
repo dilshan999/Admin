@@ -8,5 +8,6 @@
     <color name="login_details_light">#1affffff</color>
     <color name="login_details_medium">#66ffffff</color>
     <color name="white">#ffff</color>
+    <color name="white1">#BEBDBC</color>
 
 </resources>
