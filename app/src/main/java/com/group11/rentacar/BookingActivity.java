@@ -13,9 +13,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.basgeekball.awesomevalidation.AwesomeValidation;
 
+import com.google.common.collect.Range;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import static com.basgeekball.awesomevalidation.ValidationStyle.BASIC;
 
 
 public class BookingActivity extends AppCompatActivity {
@@ -26,11 +30,14 @@ public class BookingActivity extends AppCompatActivity {
     DatabaseReference reff;
     Booking booking;
     String tp,nd;
+    AwesomeValidation awesomeValidation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_booking);
+
+        awesomeValidation = new AwesomeValidation(BASIC);
 
         TextView textTitle = findViewById(R.id.textModel);
         TextView textPrice = findViewById(R.id.textPrice);
@@ -64,27 +71,39 @@ public class BookingActivity extends AppCompatActivity {
         final TextView finalTextTitle = textTitle;
         final TextView finalTextPrice = textPrice;
 
+        awesomeValidation.addValidation(BookingActivity.this, R.id.editTextCustomerName, "[a-zA-Z\\s]+", R.string.err_name);
+        awesomeValidation.addValidation(BookingActivity.this, R.id.editTextCustomerPhone, "(?=.*[0-9]).{10,}", R.string.err_phone);
+        awesomeValidation.addValidation(BookingActivity.this, R.id.editTextCustomerEmail, "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@+[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$", R.string.err_email);
+        awesomeValidation.addValidation(BookingActivity.this, R.id.editTextNoDays,  Range.closed(01,12), R.string.err_no_days);
+        awesomeValidation.addValidation(BookingActivity.this, R.id.editTextDate,  "[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9]+", R.string.err_date);
+
+
 
         btnCon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                booking.setModel(finalTextTitle.getText().toString().trim());
-                booking.setPrice(finalTextPrice.getText().toString().trim());
-                booking.setCusName(txtCustomerName.getText().toString().trim());
-                booking.setCusPhone(txtCustomerPhone.getText().toString().trim());
-                booking.setCusEmail(txtCustomerEmail.getText().toString().trim());
-                booking.setCusDate(txtCustomerDate.getText().toString().trim());
-                booking.setCusNoOfDays(txtCustomerNoOfDays.getText().toString().trim());
-                reff.push().setValue(booking);
-                Toast.makeText(BookingActivity.this, "Data added successfully", Toast.LENGTH_SHORT).show();
+                if (awesomeValidation.validate()) {
+                    booking.setModel(finalTextTitle.getText().toString().trim());
+                    booking.setPrice(finalTextPrice.getText().toString().trim());
+                    booking.setCusName(txtCustomerName.getText().toString().trim());
+                    booking.setCusPhone(txtCustomerPhone.getText().toString().trim());
+                    booking.setCusEmail(txtCustomerEmail.getText().toString().trim());
+                    booking.setCusDate(txtCustomerDate.getText().toString().trim());
+                    booking.setCusNoOfDays(txtCustomerNoOfDays.getText().toString().trim());
+                    reff.push().setValue(booking);
+                    Toast.makeText(BookingActivity.this, "Data added successfully", Toast.LENGTH_SHORT).show();
 
-                Intent intent = new Intent(BookingActivity.this,PaymentActivity.class);
-                tp= finalTextPrice.getText().toString();
-                intent.putExtra("Value1",tp);
-                nd= txtCustomerNoOfDays.getText().toString();
-                intent.putExtra("Value2",nd);
-                startActivity(intent);
-                finish();
+                    Intent intent = new Intent(BookingActivity.this, PaymentActivity.class);
+                    tp = finalTextPrice.getText().toString();
+                    intent.putExtra("Value1", tp);
+                    nd = txtCustomerNoOfDays.getText().toString();
+                    intent.putExtra("Value2", nd);
+                    startActivity(intent);
+                    finish();
+                }
+                else{
+                    Toast.makeText(getApplicationContext(),"One or more fields are invalid",Toast.LENGTH_SHORT).show();
+                }
             }
         });
 

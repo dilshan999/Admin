@@ -121,6 +121,10 @@
     <string name="err_year">invalid year</string>
     <string name="err_cvc">invalid number</string>
     <string name="msg03">Payment Succesfull!</string>
+    <string name="err_phone">Please Enter a Valid Contact Number</string>
+    <string name="err_no_days">Sorry,Maximum 12 days allowed</string>
+    <string name="err_date">Please Enter a valid Date</string>
+    <string name="err_email">Please Enter a valid Email</string>
 
 
 </resources>

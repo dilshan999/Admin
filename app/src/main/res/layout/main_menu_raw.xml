@@ -22,8 +22,9 @@ android:padding="10dp">
         android:layout_toEndOf="@+id/vehicle_img"
         android:layout_toRightOf="@id/vehicle_img"
         android:text="@string/transmission"
-        android:textColor="#000"
-        android:textSize="18sp" />
+        android:textColor="#686666"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/vehicle_price"
@@ -37,8 +38,9 @@ android:padding="10dp">
         android:layout_toEndOf="@+id/vehicle_img"
         android:layout_toRightOf="@id/vehicle_img"
         android:text="@string/price"
-        android:textColor="#000"
-        android:textSize="18sp" />
+        android:textColor="#686666"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/vehicle_name"
