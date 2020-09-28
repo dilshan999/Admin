@@ -31,7 +31,10 @@ public class IT19138664 {
         assertEquals(5000.0, total,0.1);
     }
 
-
+    @After
+    public void clear(){
+        total=0.0f;
+    }
 
     @AfterClass
     public static void clearAll(){
