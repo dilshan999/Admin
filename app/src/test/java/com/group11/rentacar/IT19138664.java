@@ -13,9 +13,8 @@ public class IT19138664 {
 
     private static PaymentActivity paymentActivity;
     private float total;
-    //private int days;
 
-    @BeforeClass                        //called only once before testing
+    @BeforeClass
     public static void initMain(){
         paymentActivity=new PaymentActivity();
     }
@@ -23,7 +22,6 @@ public class IT19138664 {
     @Before
     public void setUp(){
         total=0.0f;
-        //days=0;
     }
 
 
