@@ -33,7 +33,7 @@ public class PaymentActivity extends AppCompatActivity {
     AwesomeValidation awesomeValidation;
     DatabaseReference dref;
     Payment pyt;
-    String id;
+    String id,tp,nd;
     String i1;
 
 
@@ -55,7 +55,10 @@ public class PaymentActivity extends AppCompatActivity {
 
         pyt = new Payment();
 
-        total();
+        tp=getIntent().getExtras().getString("Value1");
+        nd= getIntent().getExtras().getString("Value2");
+
+        edittotal.setText(String.valueOf(total(tp,nd)));
 
         awesomeValidation.addValidation(PaymentActivity.this, R.id.txtname, "[a-zA-Z\\s]+", R.string.err_name);
         awesomeValidation.addValidation(PaymentActivity.this, R.id.txtcard, "(?=.*[0-9]).{16,}", R.string.err_card);
@@ -151,18 +154,11 @@ public class PaymentActivity extends AppCompatActivity {
         alert.show();
     }
 
-    public void total(){
-
-        String tp,nd;
+    public float total(String tp, String nd){
         float tot;
 
-        tp=getIntent().getExtras().getString("Value1");
-        nd= getIntent().getExtras().getString("Value2");
-
         tot = Float.valueOf(tp)*Float.valueOf(nd);
-
-        edittotal.setText(String.valueOf(tot));
-
+        return tot;
     }
 
 }
