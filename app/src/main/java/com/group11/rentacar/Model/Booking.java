@@ -1,4 +1,4 @@
-package com.group11.rentacar;
+package com.group11.rentacar.Model;
 
 public class Booking {
 
