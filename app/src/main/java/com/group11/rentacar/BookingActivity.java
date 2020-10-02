@@ -79,8 +79,6 @@ public class BookingActivity extends AppCompatActivity {
         awesomeValidation.addValidation(BookingActivity.this, R.id.editTextDate,  "[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9]+", R.string.err_date);
 
 
-
-
         btnCon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -102,6 +100,9 @@ public class BookingActivity extends AppCompatActivity {
                     intent.putExtra("Value2", nd);
                     startActivity(intent);
                     finish();
+
+                    float inputPrice=Float.parseFloat(finalTextPrice.getText().toString());
+                    float inputDays=Float.parseFloat(txtCustomerNoOfDays.getText().toString());
                 }
                 else{
                     Toast.makeText(getApplicationContext(),"One or more fields are invalid",Toast.LENGTH_SHORT).show();
@@ -109,7 +110,13 @@ public class BookingActivity extends AppCompatActivity {
             }
         });
 
+
     }
+    float checkTotal(float inputPrice,float inputDays){
+        return inputPrice*inputDays;
+    }
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
