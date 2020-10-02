@@ -11,7 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AfterPaymentActivity"></activity>
+        <activity android:name=".HomePageActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".AfterPaymentActivity" />
         <activity
             android:name=".EditFaqActivity"
             android:label="@string/title_activity_edit_faq"
@@ -26,9 +33,6 @@
             android:name=".EditActivity"
             android:label="Edit"
             android:windowSoftInputMode="stateHidden" />
-        <activity
-            android:name=".AdminHomeActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".MainActivity" />
         <activity
             android:name=".WelcomeActivity"
@@ -38,17 +42,10 @@
             android:label="Car" />
         <activity
             android:name=".PaymentActivity"
-            android:label="Payment"></activity>
+            android:label="Payment" />
         <activity
             android:name=".BookingActivity"
             android:label="Book Vehicle" />
-        <activity android:name=".HomePageActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity
             android:name=".AddVehicleActivity"
             android:label="Add Vehicle"

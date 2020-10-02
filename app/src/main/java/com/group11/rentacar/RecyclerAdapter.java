@@ -1,56 +1,87 @@
 package com.group11.rentacar;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.database.FirebaseDatabase;
+import com.group11.rentacar.Model.VehicleModel;
+import com.squareup.picasso.Picasso;
+
+import java.util.List;
+
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
 
-    String st1[];
-    int images[];
     Context context;
+    List<VehicleModel> vehicleModelList;
 
-    public RecyclerAdapter(Context ct, String s1[], int imgs[]){
-        st1 = s1;
-        context = ct;
-        images = imgs;
+    public RecyclerAdapter(Context context, List<VehicleModel> vehicleModelList) {
+        this.context = context;
+        this.vehicleModelList = vehicleModelList;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.my_raw,parent,false);
-        return new ViewHolder(view);
+
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.my_raw,parent,false);
+
+        return new ViewHolder(v);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.txt1.setText(st1[position]);
-        holder.imgView.setImageResource(images[position]);
+    public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
+
+        final VehicleModel vehicleModel = vehicleModelList.get(position);
+        holder.name.setText(vehicleModel.getBrand());
+
+
+        String imageUri = null;
+        imageUri = vehicleModel.getImageUrl();
+        // Picasso.get().load(imageUri).into(holder.imageView);
+
+        holder.btnUpdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(v.getContext(),EditActivity.class);
+                i.putExtra("VehicleID",vehicleModel.getVehicleID());
+                i.putExtra("Brand",vehicleModel.getBrand());
+                v.getContext().startActivity(i);
+            }
+        });
 
     }
+
 
     @Override
     public int getItemCount() {
-        return st1.length;
+        return vehicleModelList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView txt1;
-        ImageView imgView;
+        ImageView imageView;
+        TextView name;
+        //TextView price;
+        Button btnUpdate, btnDelete;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            txt1 = itemView.findViewById(R.id.vehicle_name);
-            imgView = itemView.findViewById(R.id.vehicle_img);
+
+            imageView = itemView.findViewById(R.id.vehicle_img);
+            name = itemView.findViewById(R.id.vehicle_name);
+            //price = itemView.findViewById(R.id.vehicle_name);
+            // btnUpdate = itemView.findViewById(R.id.editBtn);
+           // btnDelete = itemView.findViewById(R.id.deleteBtn);
         }
     }
+
 }

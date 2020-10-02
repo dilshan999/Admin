@@ -45,18 +45,21 @@ public class BookingActivity extends AppCompatActivity {
         TextView textTrans = findViewById(R.id.textCategory);
 
         String name = "Not set";
-        String price = "Not set";
+        double price = 0;
         String trans = "Not set";
 
         Bundle extras = getIntent().getExtras();
         if(extras != null){
-            name = extras.getString("name");
-            price = extras.getString("price");
+            name = extras.getString("brand");
+           // price = extras.getDouble("price");
+            price = extras.getDouble("price", 0.00);
             trans = extras.getString("transmission");
         }
 
+           String price2=String.valueOf(price);
+
         textTitle.setText(name);
-        textPrice.setText(price);
+        textPrice.setText(price2);
         textTrans.setText(trans);
 
         textTitle = findViewById(R.id.textModel);
