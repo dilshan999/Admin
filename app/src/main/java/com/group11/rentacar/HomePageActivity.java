@@ -92,7 +92,7 @@ public class HomePageActivity extends AppCompatActivity implements ImageAdapter.
 
 
     public void onItemClick(int position) {
-        Toast.makeText(HomePageActivity.this, "Normal click at position"+ position, Toast.LENGTH_SHORT).show();
+        Toast.makeText(HomePageActivity.this, "Loading", Toast.LENGTH_SHORT).show();
 
         //   Upload up = new Upload();
         VehicleModel selectedItem = vehicles.get(position);
@@ -136,6 +136,8 @@ public class HomePageActivity extends AppCompatActivity implements ImageAdapter.
         });
     }
 
+    //nav Drawer
+
     public void ClickMenu(View view){
         openDrawer(drawerLayout);
     }
@@ -158,8 +160,8 @@ public class HomePageActivity extends AppCompatActivity implements ImageAdapter.
         recreate();
     }
 
-    public void ClickAdd(View view){
-        Intent intent = new Intent(HomePageActivity.this,AddVehicleActivity.class);
+    public void ClickFAQ(View view){
+        Intent intent = new Intent(HomePageActivity.this,MainActivity.class);
         startActivity(intent);
     }
 

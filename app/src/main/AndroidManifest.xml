@@ -42,7 +42,8 @@
             android:label="Payment" />
         <activity
             android:name=".BookingActivity"
-            android:label="Book Vehicle" />
+            android:label="Book Vehicle"
+            />
         <activity
             android:name=".AddVehicleActivity"
             android:label="Add Vehicle"
