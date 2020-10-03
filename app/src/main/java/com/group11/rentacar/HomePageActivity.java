@@ -88,6 +88,8 @@ public class HomePageActivity extends AppCompatActivity implements ImageAdapter.
         });
 
 
+
+
     }
 
 
@@ -104,8 +106,10 @@ public class HomePageActivity extends AppCompatActivity implements ImageAdapter.
         in.putExtra("id",selectedItem.getVehicleID());
         in.putExtra("passengers",selectedItem.getPassengers());
         in.putExtra("transmission",selectedItem.getTransmission());
+        in.putExtra("data"," ");
 
         startActivity(in);
+
 
 
 
