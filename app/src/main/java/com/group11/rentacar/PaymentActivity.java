@@ -1,8 +1,5 @@
 package com.group11.rentacar;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +8,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.basgeekball.awesomevalidation.AwesomeValidation;
 import com.google.common.collect.Range;
@@ -55,10 +55,7 @@ public class PaymentActivity extends AppCompatActivity {
 
         pyt = new Payment();
 
-        tp=getIntent().getExtras().getString("Value1");
-        nd= getIntent().getExtras().getString("Value2");
 
-        edittotal.setText(String.valueOf(total(tp,nd)));
 
         awesomeValidation.addValidation(PaymentActivity.this, R.id.txtname, "[a-zA-Z\\s]+", R.string.err_name);
         awesomeValidation.addValidation(PaymentActivity.this, R.id.txtcard, "(?=.*[0-9]).{16,}", R.string.err_card);
@@ -134,6 +131,10 @@ public class PaymentActivity extends AppCompatActivity {
         });
 
 
+        tp=getIntent().getExtras().getString("Value1");
+        nd= getIntent().getExtras().getString("Value2");
+
+        edittotal.setText(String.valueOf(total(tp,nd)));
 
     }
 

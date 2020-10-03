@@ -1,16 +1,14 @@
 package com.group11.rentacar;
 
-import com.group11.rentacar.Model.Payment;
-
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
+
+import static org.junit.Assert.assertEquals;
 
 public class IT19138664 {
-
     private static PaymentActivity paymentActivity;
     private float total;
 
@@ -40,5 +38,6 @@ public class IT19138664 {
     public static void clearAll(){
         paymentActivity=null;
     }
+
 
 }
