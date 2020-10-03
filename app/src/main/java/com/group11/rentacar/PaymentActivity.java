@@ -136,12 +136,6 @@ public class PaymentActivity extends AppCompatActivity {
 
         edittotal.setText(String.valueOf(total(tp,nd)));
 
-        editCardName.setText("John");
-        editCardNumber.setText("7894561237894561");
-        editMonth.setText("5");
-        editYear.setText("2025");
-        editCvc.setText("589");
-
     }
 
     @Override
