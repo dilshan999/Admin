@@ -1,8 +1,5 @@
 package com.group11.rentacar;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -13,8 +10,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.basgeekball.awesomevalidation.AwesomeValidation;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.basgeekball.awesomevalidation.AwesomeValidation;
 import com.google.common.collect.Range;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -31,6 +31,7 @@ public class BookingActivity extends AppCompatActivity {
     DatabaseReference reff;
     Booking booking;
     String tp,nd;
+    TextView textPrice;
     AwesomeValidation awesomeValidation;
 
     @Override
@@ -44,9 +45,12 @@ public class BookingActivity extends AppCompatActivity {
         TextView textPrice = findViewById(R.id.textPrice);
         TextView textTrans = findViewById(R.id.textCategory);
 
+
+
         String name = "Not set";
-        double price = 0;
+        double price = 1000;
         String trans = "Not set";
+        String data= null;
 
         Bundle extras = getIntent().getExtras();
         if(extras != null){
@@ -62,6 +66,9 @@ public class BookingActivity extends AppCompatActivity {
         textPrice.setText(price2);
         textTrans.setText(trans);
 
+
+
+
         textTitle = findViewById(R.id.textModel);
         textPrice = findViewById(R.id.textPrice);
         txtCustomerName = (EditText)findViewById(R.id.editTextCustomerName);
@@ -74,6 +81,14 @@ public class BookingActivity extends AppCompatActivity {
         reff = FirebaseDatabase.getInstance().getReference().child("Booking");
         final TextView finalTextTitle = textTitle;
         final TextView finalTextPrice = textPrice;
+
+        /*txtCustomerName.setText("John");
+        txtCustomerPhone.setText("7945612305");
+        txtCustomerEmail.setText("john@gmal.com");
+        txtCustomerDate.setText("2020/12/12");
+        txtCustomerNoOfDays.setText("2");*/
+
+
 
         awesomeValidation.addValidation(BookingActivity.this, R.id.editTextCustomerName, "[a-zA-Z\\s]+", R.string.err_name);
         awesomeValidation.addValidation(BookingActivity.this, R.id.editTextCustomerPhone, "(?=.*[0-9]).{10,}", R.string.err_phone);
@@ -132,4 +147,6 @@ public class BookingActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         return super.onOptionsItemSelected(item);
     }
+
+
 }
