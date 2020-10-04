@@ -60,8 +60,8 @@ public class PaymentActivity extends AppCompatActivity {
         awesomeValidation.addValidation(PaymentActivity.this, R.id.txtname, "[a-zA-Z\\s]+", R.string.err_name);
         awesomeValidation.addValidation(PaymentActivity.this, R.id.txtcard, "(?=.*[0-9]).{16,}", R.string.err_card);
         awesomeValidation.addValidation(PaymentActivity.this, R.id.txtmonth, Range.closed(01,12), R.string.err_month);
-        awesomeValidation.addValidation(PaymentActivity.this, R.id.txtyear, "[?=.*[0-9]).{4,}]+", R.string.err_year);
-        awesomeValidation.addValidation(PaymentActivity.this, R.id.txtcvc, "(?=.*[0-9]).{3,}", R.string.err_cvc);
+        awesomeValidation.addValidation(PaymentActivity.this, R.id.txtyear, Range.closed(2020,2050), R.string.err_year);
+        awesomeValidation.addValidation(PaymentActivity.this, R.id.txtcvc, Range.closed(100,999), R.string.err_cvc);
 
         phone= getIntent().getExtras().getString("Value3");
 
