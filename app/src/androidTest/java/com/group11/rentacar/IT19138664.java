@@ -13,20 +13,20 @@ import static androidx.test.espresso.intent.Intents.intended;
 import static androidx.test.espresso.intent.matcher.IntentMatchers.hasComponent;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 
+
 public class IT19138664 {
 
     @Rule
     public IntentsTestRule<BookingActivity> intentsTestRule = new IntentsTestRule<>(BookingActivity.class);
 
 
-
     @Before
-    public void setUp() throws Exception{
+    public void setUp() throws Exception {
 
-        }
+    }
 
     @Test
-    public void testIntentBookingActivityToPaymentActivity(){
+    public void testIntentBookingActivityToPaymentActivity() {
 
         onView(withId(R.id.btnContinue)).perform(click());
 
@@ -34,9 +34,10 @@ public class IT19138664 {
     }
 
     @After
-    public void tearDown() throws Exception{
+    public void tearDown() throws Exception {
 
     }
+
 
 
 }
