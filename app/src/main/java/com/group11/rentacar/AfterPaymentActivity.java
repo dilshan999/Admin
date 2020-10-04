@@ -20,7 +20,7 @@ import com.google.firebase.database.ValueEventListener;
 public class AfterPaymentActivity extends AppCompatActivity {
 
     Button home,btnDelete;
-    DatabaseReference mReference;
+    DatabaseReference mReference,pReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +30,7 @@ public class AfterPaymentActivity extends AppCompatActivity {
         home = findViewById(R.id.btnhome);
 
         final  String i1 = getIntent().getExtras().getString("Value1");
+        final String phone = getIntent().getExtras().getString("Value2");
 
         home.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,6 +59,20 @@ public class AfterPaymentActivity extends AppCompatActivity {
                                 if (snapshot.hasChild(i1)){
                                     mReference = FirebaseDatabase.getInstance().getReference("Payment").child(i1);
                                     mReference.removeValue();
+                                        pReference = FirebaseDatabase.getInstance().getReference().child("Booking");
+                                        pReference.addListenerForSingleValueEvent(new ValueEventListener() {
+                                                                                      @Override
+                                                                                      public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                                                         if (dataSnapshot.hasChild(phone))
+                                                                                          {pReference = FirebaseDatabase.getInstance().getReference("Booking").child(phone);
+                                                                                          pReference.removeValue();}
+                                                                                      }
+
+                                                                                      @Override
+                                                                                      public void onCancelled(DatabaseError databaseError) {
+
+                                                                                      }
+                                                                                  });
 
                                     Toast.makeText(getApplicationContext(),"Order Successfully Deleted",Toast.LENGTH_SHORT).show();
 

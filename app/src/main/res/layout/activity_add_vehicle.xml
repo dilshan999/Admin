@@ -154,7 +154,7 @@
             android:entries="@array/Bags"/>
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/txtsuccess"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"

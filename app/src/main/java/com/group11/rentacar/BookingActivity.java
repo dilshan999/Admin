@@ -30,8 +30,9 @@ public class BookingActivity extends AppCompatActivity {
     Button btnCon;
     DatabaseReference reff;
     Booking booking;
-    String tp,nd;
+    String tp,nd,phone;
     TextView textPrice;
+    String intentPhone;
     AwesomeValidation awesomeValidation;
 
     @Override
@@ -108,7 +109,10 @@ public class BookingActivity extends AppCompatActivity {
                     booking.setCusEmail(txtCustomerEmail.getText().toString().trim());
                     booking.setCusDate(txtCustomerDate.getText().toString().trim());
                     booking.setCusNoOfDays(txtCustomerNoOfDays.getText().toString().trim());
-                    reff.push().setValue(booking);
+                    //reff.push().setValue(booking);
+                    intentPhone = txtCustomerPhone.getText().toString();
+
+                    reff.child(intentPhone).setValue(booking);
                     Toast.makeText(BookingActivity.this, "Data added successfully", Toast.LENGTH_SHORT).show();
 
                     Intent intent = new Intent(BookingActivity.this, PaymentActivity.class);
@@ -116,6 +120,8 @@ public class BookingActivity extends AppCompatActivity {
                     intent.putExtra("Value1", tp);
                     nd = txtCustomerNoOfDays.getText().toString();
                     intent.putExtra("Value2", nd);
+                    phone = txtCustomerPhone.getText().toString();
+                    intent.putExtra("Value3", phone);
                     startActivity(intent);
                     finish();
 
