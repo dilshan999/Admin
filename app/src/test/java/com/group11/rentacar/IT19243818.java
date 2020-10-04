@@ -1,11 +1,17 @@
 package com.group11.rentacar;
 
+import android.view.View;
+import android.view.View;
+
+
 import com.group11.rentacar.Model.Booking;
+
 
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Rule;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -39,4 +45,10 @@ public class IT19243818 {
     public static void clearAll(){
         bookingActivity=null;
     }
+
+
+
+
+    //3
+
 }
