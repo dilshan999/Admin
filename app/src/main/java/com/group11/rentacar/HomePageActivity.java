@@ -165,7 +165,7 @@ public class HomePageActivity extends AppCompatActivity implements ImageAdapter.
     }
 
     public void ClickFAQ(View view){
-        Intent intent = new Intent(HomePageActivity.this,MainActivity.class);
+        Intent intent = new Intent(HomePageActivity.this,listfaq.class);
         startActivity(intent);
     }
 

@@ -35,6 +35,9 @@
             android:name=".WelcomeActivity"
             android:label="Welcome" />
         <activity
+            android:name=".listfaq"
+            android:label="Welcome" />
+        <activity
             android:name=".VehicleActivity"
             android:label="Car" />
         <activity
