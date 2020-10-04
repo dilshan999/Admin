@@ -33,7 +33,7 @@ public class PaymentActivity extends AppCompatActivity {
     AwesomeValidation awesomeValidation;
     DatabaseReference dref;
     Payment pyt;
-    String id,tp,nd;
+    String id,tp,nd,phone;
     String i1;
 
 
@@ -62,6 +62,8 @@ public class PaymentActivity extends AppCompatActivity {
         awesomeValidation.addValidation(PaymentActivity.this, R.id.txtmonth, Range.closed(01,12), R.string.err_month);
         awesomeValidation.addValidation(PaymentActivity.this, R.id.txtyear, "[?=.*[0-9]).{4,}]+", R.string.err_year);
         awesomeValidation.addValidation(PaymentActivity.this, R.id.txtcvc, "(?=.*[0-9]).{3,}", R.string.err_cvc);
+
+        phone= getIntent().getExtras().getString("Value3");
 
 
         btnCancel.setOnClickListener(new View.OnClickListener() {
@@ -120,6 +122,7 @@ public class PaymentActivity extends AppCompatActivity {
                     Intent intent = new Intent(PaymentActivity.this,AfterPaymentActivity.class);
                     i1= editCardNumber.getText().toString();
                     intent.putExtra("Value1",i1);
+                    intent.putExtra("Value2",phone);
 
                     startActivity(intent);
                 }
